@@ -1,0 +1,10 @@
+#!/bin/bash
+EXP_PATH=${1:-/home/vahid/Desktop}
+ZIP_PATH=${2:-/var/www/html/wordpress-5.2.2/wp-content/}
+MOD_DAYS=${3:-1}
+ZIP_NAME=${4:-$(date +"%a-%d-%b-%Y-%H-%M-%S")}
+ZIP_USER=${5:-vahid}
+ZIP_GP=${6:-vahid}
+find ${ZIP_PATH} -mtime -${MOD_DAYS} -exec tar -rvf ${EXP_PATH}/${ZIP_NAME}.zip {} \;
+chown ${ZIP_USER}:${ZIP_GP} ${EXP_PATH}/${ZIP_NAME}.zip
+chmod 770 ${EXP_PATH}/${ZIP_NAME}.zip

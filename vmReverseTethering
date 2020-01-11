@@ -1,0 +1,8 @@
+#!/bin/bash
+clear
+sudo ifconfig enp1s0 0.0.0.0
+sudo ifconfig enp0s20f0u12 0.0.0.0
+sudo brctl addbr br0 && sudo brctl addif br0 enp1s0 && sudo brctl addif br0 enp0s20f0u12 && sudo ifconfig br0 up && sudo dhclient br0
+echo "In adb ENTER:"
+echo "netcfg rndis0 dhcp"
+adb shell su

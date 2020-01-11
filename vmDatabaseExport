@@ -1,0 +1,8 @@
+#!/bin/bash
+EXP_PATH=${1:-/home/vahid/Desktop}
+ZIP_NAME=${2:-$(date +"%a-%d-%b-%Y-%H-%M-%S")}
+ZIP_USER=${3:-vahid}
+ZIP_GP=${4:-vahid}
+mysqldump -qvu root --password=P@ssword2016 mywebsite | pigz -9v > ${EXP_PATH}/${ZIP_NAME}-db.sql.gz
+chown ${ZIP_USER}:${ZIP_GP} ${EXP_PATH}/${ZIP_NAME}-db.sql.gz
+chmod 770 ${EXP_PATH}/${ZIP_NAME}-db.sql.gz

@@ -1,0 +1,3 @@
+#!/bin/bash
+cd /
+echo "P@ssword2016" | sudo -S split -d -b 3900m backup.tar.gz backup.tar.gz. 
