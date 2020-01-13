@@ -1,5 +1,5 @@
 #!/bin/bash
-SERVER=${1:-s5240.goo.world}
+SERVER=${1:-s6630.Goo.world}
 USER=${2:-ir317440}
 PASS=${3:-288547}
 CERT=${4:- --servercert sha256:f625d588c8c02b4ccadb84cb40b080dba514f46771c25b309b22e5d25b859f12}
