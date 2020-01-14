@@ -1,6 +1,6 @@
 #!/bin/bash
-SERVER=${1:-s6630.Goo.world}
+SERVER=${1:-s7250.lnadd.site}
 USER=${2:-ir317440}
 PASS=${3:-288547}
-CERT=${4:- --servercert sha256:f625d588c8c02b4ccadb84cb40b080dba514f46771c25b309b22e5d25b859f12}
+CERT=${4:- --servercert sha256:d1988b24b9455378e624d87fc91c1696598b5303b43eb0695a51a33f9c20830f}
 echo ${PASS} | sudo openconnect --user=${USER}${CERT} --passwd-on-stdin ${SERVER}
