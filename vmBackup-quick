@@ -1,0 +1,8 @@
+#!/bin/bash
+cd /
+sudo rsync --delete --delete-before --progress -rvt /home/vahid/Downloads/*.wordpress*.xml /media/vahid/HDD-160GB/Work\ Vahid/Linux/Backup/manual/
+sudo rsync --delete --delete-before --progress -rvt /home/vahid/Downloads/wp_db*.sql* /media/vahid/HDD-160GB/Work\ Vahid/Linux/Backup/manual/
+sudo rsync --delete --delete-before --progress -rvt /home/vahid/.mozilla/firefox/9zg6ud3e.default/sessions /media/vahid/HDD-160GB/Work\ Vahid/Linux/Backup/manual/
+sudo rsync --exclude=vmmouse_detect --delete --delete-before --progress -rvt /bin/vm* /media/vahid/HDD-160GB/Work\ Vahid/Linux/Backup/manual/bashScripts/
+sudo tar -cvpzf /home/vahid/Downloads/wpbackup.tar.gz /var/www/html
+sudo rsync --delete --delete-before --progress -rvt /home/vahid/Downloads/wpbackup.tar.gz /media/vahid/HDD-160GB/Work\ Vahid/Linux/Backup/manual/
