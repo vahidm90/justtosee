@@ -1,0 +1,9 @@
+#!/bin/bash
+cd /
+sudo rm backup.tar.gz
+sudo tar -cvpzf backup.tar.gz --exclude={/backup.tar.gz,/home/vahid,/sys,/proc,/mnt,/dev,/run,/media} /
+sudo rsync --delete --delete-before --progress -rvt /backup.tar.gz /media/vahid/HDD-160GB/Linux/Backup/manual/backup.tar.gz
+sudo rsync --exclude={/home/vahid/.cache,/home/vahid/Downloads/TorBrowser,/home/vahid/Downloads/ruby-2.3.3} --delete --delete-before --progress -rvt /home/vahid /media/vahid/HDD-160GB/Linux/Backup/manual/vahid
+sudo dpkg --get-selections > /media/vahid/HDD-160GB/Linux/Backup/manual/Package.list
+sudo apt-key exportall > /media/vahid/HDD-160GB/Linux/Backup/manual/Repo.keys
+cp -R /etc/apt/sources.list* /media/vahid/HDD-160GB/Linux/Backup/manual/
