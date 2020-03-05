@@ -1,7 +1,7 @@
 #!/bin/bash
 SERVER=${1:-cisco.Anti-Filter.net:16000}
-USER=${2:-multi.1673}
-PASS=${3:-695899}
+USER=${2:-multi.2576}
+PASS=${3:-892462}
 GRP=${4:- --authgroup cisco}
 CERT=${5:- --servercert sha256:71403796c1f5f6af32810b90d80313181d8e46c6aafe3091017fbdf785cda237}
 echo ${PASS} | sudo openconnect --user ${USER}${GRP}${CERT} --passwd-on-stdin ${SERVER}
